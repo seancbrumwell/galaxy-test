@@ -89,8 +89,8 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, Announcement $announcement)
     {
-        //update the existing post and redirect to index.  We don't have underlying logic to remove author 
-        //authors that were already created.  So editing an announcement won't affect the author table in any way
+        //update the existing post and redirect to index.  We don't have underlying logic to remove  
+        //authors that were already created.
         $announcement->fill($request->post())->save();
 
         return redirect()->route('announcements.index')->with('success','Announcment updated');
